@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* "primary": #f6830f, */
+/* "secondary": #bb2205, */
+* {
+  font-family: "Poppins", sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dropdown-item {
+  background: #fff !important;
+  color: #000 !important;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.brand_name {
+  font-weight: bold;
+  color: #ca5116;
+}
+h1 {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+body {
+  background: #581c0c;
+}
+.btn-profile {
+  position: absolute;
+  /* top: 0px; */
+  bottom: 0px;
+  left: 0px;
+  border-top-right-radius: 100px;
+}
+.card {
+  border: 0px !important;
 }
 
-@keyframes App-logo-spin {
+.btn-delete {
+  position: absolute;
+  display: block;
+  top: 5px;
+  right: 2px;
+  opacity: 0;
+  background: #581c0c;
+  padding: 5px;
+  color: #fff;
+  border-radius: 50%;
+  transition: 0.5s all;
+}
+.card_container:hover .btn-delete {
+  opacity: 1;
+  color: #fff;
+}
+.active_link {
+  border-bottom: 2px solid #7d0633;
+  color: #7d0633 !important;
+  font-weight: bold;
+}
+.login_bg {
+  width: 100vw;
+  height: 100vh;
+  background: #7d0633;
+  position: absolute;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 1s;
+}
+@keyframes fadein {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
 }

@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/js/bootstrap.min";
+import "./index.scss";
+import "./App.css";
+import Navbar from "./layout/Navbar";
+import { Switch, Route, Redirect } from "react-router-dom";
+import Home from "./componets/Home";
+import StudentForm from "./componets/StudentForm";
+import StudentView from "./componets/StudentView";
+import Login from "./componets/Login";
+import ProtectedRoute from "./componets/ProtectedRoute";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Switch>
+        <ProtectedRoute exact path="/" component={Home} />
+        <ProtectedRoute exact path="/student/add" component={StudentForm} />
+        <ProtectedRoute
+          exact
+          path="/student/view/:id"
+          component={StudentView}
+        />
+        <ProtectedRoute
+          exact
+          path="/student/edit/:id?"
+          component={StudentForm}
+        />
+        <Route exact path="/login" component={Login} />
+      </Switch>
     </div>
   );
 }
